@@ -1,0 +1,546 @@
+/*<?php
+    ob_start ("ob_gzhandler");
+    header("Content-type: text/css; charset: UTF-8");
+    header("Cache-Control: must-revalidate");
+    $offset = 60 * 60 ;
+    $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+    header($ExpStr);
+?>*/
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #FFFFFF;
+}
+body, td, th, input, select, textarea, option, optgroup {
+	font-size: 13px;
+	color: #000000;
+}
+input[type='text'] {
+	padding: 2px;
+}
+select {
+	padding: 1px;
+}
+textarea {
+	padding: 2px;
+}
+a, a:visited {
+	color: #003366;
+	cursor: pointer;
+}
+form {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	height: 56px;
+	padding: 0px 30px;
+	background: url('../image/header.png') repeat-x;
+	min-width: 900px;
+}
+#header .div1 {
+	color: #FFFFFF;
+	padding: 18px 0px 0px 0px;
+	float: left;
+}
+#header .div2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: right;
+	padding: 14px 0px 0px 0px;
+	float: right;
+}
+#header .div2 span {
+	font-weight: bold;
+}
+#menu {
+	background: url('../image/menu.png') repeat-x;
+	position: relative;
+	z-index: 1;
+	height: 34px;
+	clear: both;
+	padding: 0px 30px;
+	min-width: 900px;
+}
+ul.left {
+	float: left;
+}
+ul.right {
+	float: right;
+}
+.nav {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: url('../image/transparent.png');
+}
+.nav a {
+	display: block;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 5px;
+}
+.nav > li + li {
+	background: url('../image/split.png') center left no-repeat;
+}
+.nav .top, .nav li li.sfhover {
+	padding: 10px 15px 9px 17px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-align: center;
+}
+.nav ul li {
+	padding: 2px;
+}
+.nav .selected .top {
+	background: url('../image/selected.png') repeat-x;
+	color: #FFFFFF;
+}
+.nav .selected:hover a.top, .nav .sfhover a.top {
+}
+.nav .parent {
+	background: url('../image/arrow_right.png') 95% center no-repeat;
+}
+.nav li {
+	float: left;
+	list-style: none;
+}
+.nav li ul {
+	position: absolute;
+}
+.nav li li {
+	clear: both;
+}
+.nav li ul a {
+	color: #FFFFFF;
+	height: 15px;
+	width: 145px;
+}
+.nav li ul ul {
+	margin: -27px 0 0 157px;
+}
+.nav li li:hover, .nav li li.sfhover {
+	background: #333;
+	color: #000000;
+}
+#content {
+	background: #FFFFFF url('../image/background.png') 0px 1px repeat-x;
+	padding: 10px 30px 0px 30px;
+	min-width: 900px;
+	padding-bottom: 80px;
+}
+
+
+
+#container {
+	height: 100%;
+}
+body > #container {
+	height: auto;
+	min-height: 100%;
+}
+#footer {
+	background: #FFFFFF url('../image/footer.png') repeat-x;
+/*	height: 90px; */
+	padding-top: 38px;
+	text-align: center;
+	font-size: 12px;
+	color: #333;
+	position: relative;
+	margin-top: -80px;
+	clear: both;
+}
+#footer a {
+	color: #333;
+	text-decoration: underline;
+}
+.breadcrumb-so, .breadcrumb-so a {
+	font-size: 12px;
+	color: #666;
+	margin-bottom: 15px;
+}
+.success {
+	padding: 15px 0px;
+	margin-bottom: 15px;
+	background: #E4F1C9;
+	border: 1px solid #A5BD71;
+	font-size: 12px;
+	text-align: center;
+}
+.warning {
+	padding: 10px 0px;
+	margin-bottom: 5px;
+	background: #FFDFE0;
+	border: 1px solid #FF9999;
+	font-size: 12px;
+	text-align: center;
+}
+.attention {
+	padding: 15px 0px;
+	margin-bottom: 15px;
+	background: #FEFBCC;
+	border: 1px solid #E6DB55;
+	font-size: 12px;
+	text-align: center;
+}
+.box {
+	margin-bottom: 15px;
+}
+.box > .heading {
+	height: 40px;
+	background: url('../image/box_center.png') repeat-x;
+	margin-bottom: 0px;
+}
+.box > .left {
+	float: left;
+	width: 7px;
+	height: 40px;
+	background: url('../image/box_left.png') no-repeat;
+}
+.box > .right {
+	float: right;
+	width: 7px;
+	height: 40px;
+	background: url('../image/box_right.png') no-repeat;
+}
+.box > .heading h1 {
+	background-position:  2px 9px;
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 11px 0px 11px 30px;
+	color: #003A88;
+	font-size: 16px;
+	float: left;
+}
+.buttons {
+	float: right;
+	padding-top: 8px;
+}
+.box > .content {
+	padding: 10px;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	min-height: 300px;
+}
+.button {
+	padding-left: 8px;
+	display: inline-block;
+	margin-right: 5px;
+	background: url('../image/button_left.png') top left no-repeat;
+}
+.button span {
+	color: #FFF;
+	display: block;
+	padding: 5px 10px 5px 2px;
+	background: url('../image/button_right.png') top right no-repeat;
+}
+.listdiv {
+
+	background:#0256a1 url(../../images/tr-bg.jpg) repeat-x;
+	color: #ffffff;
+	font-weight: bold;
+	font-size:14px;
+	padding:7px;
+
+
+}
+.slist td{
+	padding:3px 5px;
+	border-bottom:dotted 1px #b8dcfb;
+}
+.list {
+	border-collapse: collapse;
+	width: 100%;
+	border-top: 1px solid #b8dcfb;
+	border-left: 1px solid #b8dcfb;
+}
+.list td {
+	border-right: 1px solid #b8dcfb;
+	border-bottom: 1px solid #b8dcfb;
+	vertical-align: middle;
+}
+.list thead tr td  {
+	background:#0256a1 url(../../images/tr-bg.jpg) repeat-x;
+}
+
+.list thead td {
+	padding: 0px 5px;
+}
+.list thead td a, .list thead td {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size:14px;
+}
+.list tbody a {
+/*	text-decoration: underline; */
+color:#084598;
+}
+.list tbody td {
+	vertical-align: middle;
+	padding: 0px 5px;
+}
+.list input,.list select {width:90%;}
+.list tbody tr:odd {
+	background: #FFFFFF;
+}
+.list tbody tr:even {
+	background: #e0f0fe;
+}
+.list .left {
+	text-align: left;
+	padding: 5px;
+}
+.list .right {
+	text-align: right;
+	padding: 5px;
+}
+.list .center {
+	text-align: center;
+	padding: 5px;
+}
+.list .asc {
+	padding-right: 15px;
+	background: url('../image/asc.png') right center no-repeat;
+}
+.list .desc {
+	padding-right: 15px;
+	background: url('../image/desc.png') right center no-repeat;
+}
+.list .filter td {
+	padding: 5px 1px;
+	background: #E7EFEF;
+}
+.pagination {
+	margin-top: 10px;
+	border: 1px solid #b8dcfb;
+	background: #e0f0fe;
+	display: inline-block;
+	width: 100%;
+}
+.pagination .links, .pagination .results {
+	padding: 9px;
+}
+.pagination .links {
+	float: left;
+}
+.pagination .links a {
+	border: 1px solid #CCCCCC;
+	padding: 4px 7px;
+	text-decoration: none;
+	color: #000000;
+}
+.pagination .links b {
+	border: 1px solid #CCCCCC;
+	padding: 4px 7px;
+	text-decoration: none;
+	color: #000000;
+	background: #FFFFFF;
+}
+.pagination .results {
+	float: right;
+}
+.form {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.form tr td:first-child {
+	width: 200px;
+	font-weight:bold;
+	text-wrap:none;
+	font-size:13px;
+	color:#084598;
+}
+.form > * > * > td {
+	padding: 5px;
+	color: #000000;
+	border-bottom: 1px dotted #B8DCFB;
+}
+.help {
+	color: #999;
+	font-size: 10px;
+	font-weight: normal;
+	font-family: Verdana, Geneva, sans-serif;
+	display: block;
+}
+.required {
+	color: #FF0000;
+	font-weight: bold;
+}
+.error {
+	color: #FF0000;
+	padding-top: 3px;
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+}
+.scrollbox {
+	border: 1px solid #CCCCCC;
+	width: 99%;
+	height: 100px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+}
+.htabs {
+	padding: 0px 0px 0px 10px;
+	height: 30px;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 15px;
+}
+.htabs a {
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	background: #FFFFFF url('../image/tab.png') repeat-x;
+	padding: 6px 15px 7px 15px;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	margin-right: 2px;
+}
+.htabs a.selected {
+	padding-bottom: 8px;
+	background: #FFFFFF;
+}
+.vtabs {
+	width: 180px;
+	padding: 10px 0px;
+	min-height: 300px;
+	float: left;
+	display: block;
+	border-right: 1px solid #DDDDDD;
+}
+.vtabs a {
+	display: block;
+	float: left;
+	width: 150px;
+	margin-bottom: 5px;
+	clear: both;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	background: #F7F7F7;
+	padding: 6px 14px 7px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: right;
+	text-decoration: none;
+	color: #000000;
+}
+.vtabs a.selected {
+	padding-right: 15px;
+	background: #FFFFFF;
+}
+.vtabs_page {
+/* HHCC	margin-left: 195px; */
+}
+.scrollbox div {
+	padding: 3px;
+}
+.scrollbox div input {
+	margin: 0px;
+	padding: 0px;
+	margin-right: 3px;
+}
+.scrollbox div.even {
+	background: #FFFFFF;
+}
+.scrollbox div.odd {
+	background: #E4EEF7;
+}
+
+.add {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:transparent url(../image/add.png) no-repeat scroll right center;
+	color:#000000;
+	display:inline-block;
+	padding-right:20px;
+	cursor: pointer;
+}
+.remove {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:transparent url(../image/delete.png) no-repeat scroll right center;
+	color:#000000;
+	display:inline-block;
+	padding-right:20px;
+	cursor: pointer;
+}
+.formdiv {
+	clear: both;
+}
+.formdiv .mid {
+	border-left:1px solid #B8DCFB; border-right:1px solid #B8DCFB; background:#E0F0FE;
+	padding:0; margin:0;
+	min-height: 150px;
+}
+.formdiv .bot, .formdiv .top {
+	 background: none;width:100%; height:7px;  padding:0; margin:0;
+}
+.formdiv .bot img, .formdiv .top img {
+	width:100%; height:7px; vertical-align:top;
+}
+
+#file_frame {
+	width:100%;
+	height: 200px;
+	overflow: auto;
+	display: none;
+	border: 1px solid #B8DCFB;
+	background: transparent;
+}
+a, a img {vertical-align: top;}
+.sp_hc_download_order, .sp_hc_print_order, .sp_hc_print_workorder, .sp_hc_copy_order, .sp_hc_delete_order, .sp_hc_print_label , .sp_hc_create_packing_slip { display:none;}
+
+/* style for shipping number comment in delivery tab of order form */
+
+.order-delivery-shipping-comment {color:#00549F;font-size: 11px;font-weight: normal;}
+
+/******** styles for tax rates tab on settings screen************/
+.tax-ortho-code{float: left;width: 160px;height: 26px;}
+.ortho-tax-type{float: left;}
+.tax-ortho-type{width:300px!important;color: black!important;font-weight: normal!important;}
+.combined{border-bottom: none!important;}
+
+/******* styles for order form page pricing tab*****************/
+
+.header-fields-div
+{
+height: 30px;
+width: 400px;
+}
+.heading-labels
+{
+	color:#00549f;
+	float: left;
+	width: 130px;
+}
+.heading-value-labels{
+
+	float: left;
+	color: #00549f;
+}
